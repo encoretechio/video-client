@@ -10,7 +10,7 @@ const appRoutes: Routes = [
     component: UserLoginComponent
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   }
 ];

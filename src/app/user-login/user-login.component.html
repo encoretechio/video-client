@@ -2,7 +2,7 @@
 
 
 
-        <form class="form-signin">
+        <form class="form-signin" (ngSubmit)="onSubmit(details)">
           <h2 class="form-signin-heading">Sign In</h2>
           <label for="inputEmail" class="sr-only">Email address</label>
           <input id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="" value="{{details.username}}">
@@ -13,7 +13,7 @@
               <input [(ngModel)]="details.rememberMe" name="rememberMe" type="checkbox"> Remember me
             </label>
           </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onSubmit(details)">Sign in</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
 
 

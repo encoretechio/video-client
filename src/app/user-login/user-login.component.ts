@@ -29,7 +29,7 @@ export class UserLoginComponent implements OnInit {
 
   onSubmit(details: LoginDetails):void
   {
-    let link = ['home'];
+    let link = [''];
     this.router.navigate(link);
   }
 }
