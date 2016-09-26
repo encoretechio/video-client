@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+export class LoginDetails {
+  username: string;
+  password: string;
+  rememberMe: boolean;
+}
 
 @Component({
   selector: 'app-user-login',
@@ -7,9 +14,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor() { }
+  details:LoginDetails = {
+      username:"",
+      password:"",
+      rememberMe:true
+  };
+
+  constructor(
+    private router:Router) {
+  }
 
   ngOnInit() {
   }
 
+  onSubmit(details: LoginDetails):void
+  {
+    let link = ['home'];
+    this.router.navigate(link);
+  }
 }
