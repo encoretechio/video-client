@@ -1,10 +1,10 @@
 import { VideoClientPage } from './app.po';
 
 describe('video-client App', function() {
-  let page: VideoClienAppPage;
+  let page: VideoClientPage;
 
   beforeEach(() => {
-    page = new VideoClienAppPage();
+    page = new VideoClientPage();
   });
 
   it('should display message saying app works', () => {

@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor/globals';
 
-export class VideoClienAppPage {
+export class VideoClientPage {
   navigateTo() {
     return browser.get('/');
   }
