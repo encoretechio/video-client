@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-export class LoginDetails {
-  username: string;
-  password: string;
-  rememberMe: boolean;
-}
+import { DataService } from '../data.service';
+import { LoginDetails } from '../models/login-details'
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css']
+  styleUrls: ['./user-login.component.css'],
+  providers: [DataService]
 })
 export class UserLoginComponent implements OnInit {
 
@@ -21,7 +18,8 @@ export class UserLoginComponent implements OnInit {
   };
 
   constructor(
-    private router:Router) {
+    private router:Router,
+    private dataService:DataService) {
   }
 
   ngOnInit() {
@@ -29,7 +27,9 @@ export class UserLoginComponent implements OnInit {
 
   onSubmit(details: LoginDetails):void
   {
-    let link = [''];
-    this.router.navigate(link);
+
+    this.dataService.validateLogin(details).then(heroes => this.router.navigate(['login']));
+    // let link = [''];
+    // this.router.navigate(link);
   }
 }
