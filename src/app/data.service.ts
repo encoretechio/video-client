@@ -6,9 +6,19 @@ import { USERS } from './mock-data/users';
 @Injectable()
 export class DataService {
 
-  constructor() { }
-  validateLogin(loginDetails: LoginDetails): Promise<User[]> {
-  return Promise.resolve(USERS);
-  }
+    constructor() { }
+    validateLogin(loginDetails: LoginDetails): Promise<boolean> {
+      var value = false;
+      //console.log(loginDetails.username+" - "+loginDetails.password);
+      for(let u of USERS)
+      {
+        //console.log(u.username+" - "+u.password);
+        if(u.username == loginDetails.username && u.password==loginDetails.password)
+        {
+          value = true;
+        }
+      }
+      return Promise.resolve(value);
+    }
 
 }
