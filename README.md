@@ -5,7 +5,7 @@ https://github.com/angular/angular-cli
 
 Run in the Development server. `ng serve`
 
-Current Deployment https://letsbuildsomething.github.io/video-clien-app/
+Current Deployment https://letsbuildsomething.github.io/video-client/
 
 
 
